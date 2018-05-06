@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+// Override variables
+@import "variables";
+
+// Import Bulma
+@import "vendor/bulma/bulma";
+
+// Import Sweet ALERT
+@import "vendor/swal";
+
+// Import FA
+@import "vendor/font-awesome";
+
+// Import Vendor
+@import "vendor/spinkit";
+
+// Import core styles
+@import "styles/styles";

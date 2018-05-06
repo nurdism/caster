@@ -1,0 +1,56 @@
+$margin-slug: m;
+$margin: margin;
+
+$padding-slug: p;
+$padding: pad;
+
+$top-slug: t;
+$bottom-slug: b;
+$left-slug: l;
+$right-slug: r;
+
+@for $i from 1 through 20 {
+  $size: $i * 2;
+  .#{$margin}-#{$size} { margin: #{$size}px #{$size}px #{$size}px #{$size}px !important;  }
+  .#{$margin}-x-#{$size} { margin: 0 #{$size}px 0 #{$size}px !important; }
+  .#{$margin}-y-#{$size} { margin: #{$size}px 0 #{$size}px 0 !important; }
+  .#{$margin-slug}#{$top-slug}-#{$size} { margin-top: #{$size}px !important; }
+  .#{$margin-slug}#{$bottom-slug}-#{$size} { margin-bottom: #{$size}px !important; }
+  .#{$margin-slug}#{$left-slug}-#{$size} { margin-left: #{$size}px !important; }
+  .#{$margin-slug}#{$right-slug}-#{$size} { margin-right: #{$size}px !important; }
+
+  .#{$padding}-#{$size} { padding: #{$size}px #{$size}px #{$size}px #{$size}px !important; }
+  .#{$padding}-x-#{$size} { padding: 0 #{$size}px 0 #{$size}px !important; }
+  .#{$padding}-y-#{$size} { padding: #{$size}px 0 #{$size}px 0 !important; }
+  .#{$padding-slug}#{$top-slug}-#{$size} { padding-top: #{$size}px !important; }
+  .#{$padding-slug}#{$bottom-slug}-#{$size} { padding-bottom: #{$size}px !important; }
+  .#{$padding-slug}#{$left-slug}-#{$size} { padding-left: #{$size}px !important; }
+  .#{$padding-slug}#{$right-slug}-#{$size} { padding-right: #{$size}px !important; }
+}
+
+@for $i from 9 through 30 {
+  $size: $i * 5;
+  .#{$margin}-#{$size} { margin: #{$size}px #{$size}px #{$size}px #{$size}px !important; }
+  .#{$margin}-x-#{$size} { margin: 0 #{$size}px 0 #{$size}px !important; }
+  .#{$margin}-y-#{$size} { margin: #{$size}px 0 #{$size}px 0 !important; }
+  .#{$margin-slug}#{$top-slug}-#{$size} { margin-top: #{$size}px !important; }
+  .#{$margin-slug}#{$bottom-slug}-#{$size} { margin-bottom: #{$size}px !important; }
+  .#{$margin-slug}#{$left-slug}-#{$size} { margin-left: #{$size}px !important; }
+  .#{$margin-slug}#{$right-slug}-#{$size} { margin-right: #{$size}px !important; }
+
+  .#{$padding}-#{$size} { padding: #{$size}px #{$size}px #{$size}px #{$size}px !important; }
+  .#{$padding}-x-#{$size} { padding: 0 #{$size}px 0 #{$size}px !important; }
+  .#{$padding}-y-#{$size} { padding: #{$size}px 0 #{$size}px 0 !important; }
+  .#{$padding-slug}#{$top-slug}-#{$size} { padding-top: #{$size}px !important; }
+  .#{$padding-slug}#{$bottom-slug}-#{$size} { padding-bottom: #{$size}px !important; }
+  .#{$padding-slug}#{$left-slug}-#{$size} { padding-left: #{$size}px !important; }
+  .#{$padding-slug}#{$right-slug}-#{$size} { padding-right: #{$size}px !important; }
+}
+
+@for $i from 1 through 50 {
+  $size: $i * 2;
+  .size-#{$size} { font-size: #{$size}px !important; }
+  .lh-#{$size} { line-height: #{$size}px !important; }
+  .w-#{$size} { width: #{$size}px !important; }
+  .h-#{$size} { height: #{$size}px !important; }
+}

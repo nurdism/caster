@@ -1,0 +1,23 @@
+{
+  "name": "caster",
+  "productName": "Caster",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./main.js",
+  "author": {
+    "name": "Nurdism",
+    "email": "nurdism.io@gmail.com",
+    "url": "https://github.com/nurdism"
+  },
+  "scripts": {
+    "electron-rebuild": "node ../.internals/scripts/rebuild.js",
+    "postinstall": "npm run electron-rebuild"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "sodium": "github:general-programming/node-sodium",
+    "discord.js": "github:discordjs/discord.js",
+    "ffmpeg-binaries": "github:nurdism/ffmpeg-binaries",
+    "node-opus": "^0.2.7"
+  }
+}

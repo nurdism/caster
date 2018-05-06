@@ -1,0 +1,11 @@
+@import "reset";
+@import "utility";
+
+html, body {
+  overflow: hidden;
+  background: transparent;
+  -webkit-user-select: none;
+  font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+@import "components/window";

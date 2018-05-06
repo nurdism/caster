@@ -1,0 +1,115 @@
+.window {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  background: $dark;
+  overflow: hidden;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+
+  .window-title-bar {
+    order: 1;
+    width: 100vw;
+    align-self: flex-start;
+    display: flex;
+    user-select: none;
+    -webkit-app-region: drag;
+
+    .branding {
+      height: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 5px;
+      opacity: .4;
+    }
+
+    .status {
+      height: 22px;
+      line-height: 22px;
+      font-size: 12px;
+      margin-left: 5px;
+    }
+
+    nav {
+      margin-left: auto;
+
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+
+        li {
+          -webkit-app-region: no-drag;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          height: 22px;
+          width: 28px;
+          opacity: .6;
+          pointer-events: auto;
+          position: relative;
+
+          &:hover {
+            opacity: 1;
+          }
+
+          &.close{
+            &:hover {
+              background: rgba(255, 0, 0, .3);
+            }
+          }
+
+          &.minimize, &.maximize{
+            &:hover {
+              background: $grey-darker;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .window-content {
+    order: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: $grey-darker;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: $grey-darker;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $dark;
+      border: 2px solid $grey-darker;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: $grey-darker;
+    }
+  }
+
+  .window-footer {
+    order: 3;
+    width: 100vw;
+    align-self: flex-end;
+    user-select: none;
+  }
+}

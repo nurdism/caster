@@ -1,0 +1,137 @@
+{
+  "name": "caster",
+  "version": "0.1.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "npm run nuxt",
+    "build": "npm run nuxt build",
+    "nuxt": "node --trace-warnings -r dotenv/config ./node_modules/nuxt/bin/nuxt",
+    "electron-rebuild": "electron-rebuild --parallel --force --types prod,dev,optional",
+    "precommit": "npm run lint && npm run lint:styles",
+    "release": "npm run precommit && standard-version && git push --follow-tags",
+    "package": "npm run build && build --publish never",
+    "package-all": "npm run build && build -mwl",
+    "package-linux": "npm run build && build --linux",
+    "package-win": "npm run build && build --win --x64",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ./src",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:styles": "stylelint ./src/assets/**/*.scss ./src/assets/**/*.css ./src/**/*.vue --syntax scss",
+    "lint:styles:fix": "npm run lint:styles -- --fix",
+    "postinstall": "npm run electron-rebuild",
+    "deps": "npm-check -u",
+    "snyk": "snyk test"
+  },
+  "build": {
+    "productName": "Caster",
+    "appId": "org.nurdism.caster",
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "AppImage"
+      ],
+      "category": "Development"
+    },
+    "directories": {
+      "buildResources": "src/assets/resources",
+      "output": "release",
+      "app": "dist"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nurdism/caster.git"
+  },
+  "author": {
+    "name": "Nurdism",
+    "email": "nurdism.io@gmail.com",
+    "url": "https://github.com/nurdism"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nurdism/caster/issues"
+  },
+  "homepage": "https://github.com/nurdism/caster#readme",
+  "keywords": [
+    "electron",
+    "vue",
+    "nuxt",
+    "sass",
+    "discord",
+    "podcast",
+    "node"
+  ],
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "dotenv": "^5.0.1",
+    "electron": "^2.0.0",
+    "electron-builder": "^20.11.1",
+    "electron-debug": "^1.5.0",
+    "electron-devtools-installer": "^2.2.3",
+    "electron-rebuild": "^1.7.3",
+    "electron-updater": "^2.21.10",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-html": "^4.0.3",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "eslint-plugin-vue": "^4.5.0",
+    "node-sass": "^4.9.0",
+    "npm-check": "^5.7.0",
+    "nuxtjs-electron": "^0.1.9",
+    "sass-loader": "^7.0.1",
+    "snyk": "^1.78.0",
+    "source-map-support": "^0.5.5",
+    "standard-version": "^4.3.0",
+    "stylelint": "^9.2.0",
+    "stylelint-config-recommended-scss": "^3.2.0",
+    "stylelint-processor-html": "^1.0.0",
+    "stylelint-scss": "^3.1.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free-webfonts": "^1.0.8",
+    "bulma": "^0.7.1",
+    "discord.js": "github:discordjs/discord.js",
+    "ffmpeg-binaries": "github:nurdism/ffmpeg-binaries",
+    "fs-extra": "^6.0.0",
+    "glob": "^7.1.2",
+    "google-tts-api": "0.0.2",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.1",
+    "node-opus": "^0.2.7",
+    "nuxt": "^1.4.0",
+    "slugify": "^1.2.9",
+    "sodium": "github:general-programming/node-sodium",
+    "spinkit": "^1.2.5",
+    "sweetalert": "^2.1.0",
+    "tar": "^4.4.2",
+    "uuid": "^3.2.1",
+    "vue-localstorage": "^0.6.2",
+    "vuex": "^3.0.1",
+    "wav": "^1.0.2",
+    "xmlbuilder": "^10.0.0"
+  }
+}

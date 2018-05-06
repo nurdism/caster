@@ -1,0 +1,37 @@
+.swal-overlay {
+  top: 22px;
+  overflow: hidden;
+}
+
+.swal-modal {
+  background-color: $grey-darker;
+}
+
+.swal-title {
+ color: $grey-lighter;
+}
+
+.swal-text {
+  color: $grey-lighter;
+}
+
+.swal-footer {
+  color: $grey-lighter;
+}
+
+.swal-button {
+  border-radius: 2px;
+  border: none;
+  text-shadow: none;
+  outline: none;
+  background-color: $green;
+
+  &:hover, &:active{
+    background-color: $green;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
